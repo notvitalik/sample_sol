@@ -32,8 +32,9 @@ namespace mapSentence
             }
             catch(Exception ex)
             {
-                Console.WriteLine("Message :" + ex.Message);
-                Console.WriteLine("Inner Exception : " + ex.InnerException);
+                Console.WriteLine("Exception in Main - Message :" + ex.Message);
+                if(ex.InnerException!=null)
+                    Console.WriteLine("Inner Exception : " + ex.InnerException);
 
             }
            
@@ -55,8 +56,9 @@ namespace mapSentence
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Message :" + ex.Message);
-                Console.WriteLine("Inner Exception : " + ex.InnerException);
+                Console.WriteLine("Exception in getDelimiter - Message : :" + ex.Message);
+                if(ex.InnerException!=null)
+                    Console.WriteLine("Inner Exception : " + ex.InnerException);
             }
 
             return sbdel.ToString();
@@ -72,8 +74,9 @@ namespace mapSentence
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Message :" + ex.Message);
-                Console.WriteLine("Inner Exception : " + ex.InnerException);
+                Console.WriteLine("Exception in isalphabet - Message :" + ex.Message);
+                if(ex.InnerException!=null)
+                    Console.WriteLine("Inner Exception : " + ex.InnerException);
             }
             return isalpha;
         }
@@ -121,8 +124,9 @@ namespace mapSentence
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Message :"+ ex.Message);
-                Console.WriteLine("Inner Exception : " + ex.InnerException);
+                Console.WriteLine("Exception in mapsentence - Message :"+ ex.Message);
+                if(ex.InnerException!=null)
+                    Console.WriteLine("Inner Exception : " + ex.InnerException);
             }
             return result.ToString();
         }
