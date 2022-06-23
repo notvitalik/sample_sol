@@ -26,8 +26,10 @@ namespace mapSentence
                 //string input = Console.ReadLine();
                 //string input = "Space2Separated2Space";
                 //string input = "Space-Spaces-Space";
-                string input = "Space###Spaces###Space";
-                string result = mapsentence(input);
+                //string input = "sos-sos-sos";
+                //string input = "ss-ss-ss";
+                string input = "Space###SpacesSpaces###Space";
+                string result = ParseSentence(input);
                 Console.WriteLine(result);
             }
             catch(Exception ex)
@@ -62,6 +64,38 @@ namespace mapSentence
             }
 
             return sbdel.ToString();
+        }
+        
+        static string ParseSentence(string s)
+        {
+            StringBuilder result = new StringBuilder();
+           
+            try
+            {
+                string delimiter = getDelimiter(s);
+                string[] words = s.Split(delimiter).ToArray();
+                foreach(var word in words)
+                {
+                    HashSet<char> hs = new HashSet<char>();
+                    for(int index=1;index<word.Length-1;index++)
+                    {
+                        hs.Add(word[index]);
+                    }
+
+                    result.Append(word[0]);
+                    result.Append(hs.Count);
+                    result.Append(word[word.Length-1]);
+                    result.Append(delimiter);
+                }
+                result.Remove(result.Length-delimiter.Length,delimiter.Length);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("ParseSentence - Error Message :" + ex.Message);
+                Console.WriteLine("Inner Exception : " + ex.InnerException);
+            }
+            
+            return result.ToString();
         }
 
         static bool isalphabet(char c)
