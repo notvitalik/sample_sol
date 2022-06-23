@@ -56,7 +56,7 @@ namespace mapSentence
             }
             catch (Exception ex)
             {
-                Console.WriteLine("Exception in getDelimiter - Message : :" + ex.Message);
+                Console.WriteLine("Exception in getDelimiter - Message :" + ex.Message);
                 if(ex.InnerException!=null)
                     Console.WriteLine("Inner Exception : " + ex.InnerException);
             }
