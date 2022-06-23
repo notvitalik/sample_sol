@@ -29,6 +29,8 @@ namespace mapSentence
                 //string input = "sos-sos-sos";
                 //string input = "ss-ss-ss";
                 string input = "Space###SpacesSpaces###Space";
+                //if(input.Length<2)
+                //"ok" is minimum?;
                 string result = ParseSentence(input);
                 Console.WriteLine(result);
             }
